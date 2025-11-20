@@ -7,9 +7,9 @@ import (
 	"context"
 	"testing"
 
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api"
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api/pointer"
 	"github.com/stretchr/testify/require"
-	"github.com/typesense/typesense-go/v4/typesense/api"
-	"github.com/typesense/typesense-go/v4/typesense/api/pointer"
 )
 
 func analyticsRuleCleanUp() {
@@ -18,7 +18,7 @@ func analyticsRuleCleanUp() {
 	for _, rule := range result {
 		typesenseClient.Analytics().Rule(rule.Name).Delete(context.Background())
 	}
-	
+
 	// Clean up collections
 	collections, _ := typesenseClient.Collections().Retrieve(context.Background(), nil)
 	for _, collection := range collections {
@@ -32,7 +32,7 @@ func TestAnalyticsRule(t *testing.T) {
 
 	t.Run("Create", func(t *testing.T) {
 		collectionName := createNewCollection(t, "analytics-rules-collection")
-		
+
 		// Create the rule directly using the Create API
 		ruleName := newUUIDName("test-rule")
 		ruleCreate := &api.AnalyticsRuleCreate{
@@ -49,7 +49,7 @@ func TestAnalyticsRule(t *testing.T) {
 		result, err := typesenseClient.Analytics().Rules().Create(context.Background(), []*api.AnalyticsRuleCreate{ruleCreate})
 		require.NoError(t, err)
 		require.Len(t, result, 1)
-		
+
 		createdRule := result[0]
 		require.Equal(t, ruleName, createdRule.Name)
 		require.Equal(t, api.AnalyticsRuleTypeCounter, createdRule.Type)

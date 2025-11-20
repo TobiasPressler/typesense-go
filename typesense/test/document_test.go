@@ -7,9 +7,9 @@ import (
 	"context"
 	"testing"
 
+	"github.com/TobiasPressler/typesense-go/v4/typesense"
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api"
 	"github.com/stretchr/testify/require"
-	"github.com/typesense/typesense-go/v4/typesense"
-	"github.com/typesense/typesense-go/v4/typesense/api"
 )
 
 func TestDocumentRetrieveGeneric(t *testing.T) {

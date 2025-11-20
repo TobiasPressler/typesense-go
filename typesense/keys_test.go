@@ -7,11 +7,11 @@ import (
 	"testing"
 	"time"
 
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api"
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api/pointer"
+	"github.com/TobiasPressler/typesense-go/v4/typesense/mocks"
 	"github.com/jinzhu/copier"
 	"github.com/stretchr/testify/assert"
-	"github.com/typesense/typesense-go/v4/typesense/api"
-	"github.com/typesense/typesense-go/v4/typesense/api/pointer"
-	"github.com/typesense/typesense-go/v4/typesense/mocks"
 	"go.uber.org/mock/gomock"
 )
 

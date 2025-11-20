@@ -12,10 +12,10 @@ import (
 	"testing"
 	"time"
 
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api"
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api/pointer"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/require"
-	"github.com/typesense/typesense-go/v4/typesense/api"
-	"github.com/typesense/typesense-go/v4/typesense/api/pointer"
 )
 
 func isV30OrAbove(t *testing.T) bool {
@@ -298,8 +298,6 @@ func newKey() *api.ApiKey {
 		ExpiresAt:   pointer.Int64(time.Now().Add(1 * time.Hour).Unix()),
 	}
 }
-
-
 
 func newCurationSetCreateSchema() *api.CurationSetCreateSchema {
 	return &api.CurationSetCreateSchema{

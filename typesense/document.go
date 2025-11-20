@@ -6,7 +6,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/typesense/typesense-go/v4/typesense/api"
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api"
 )
 
 type DocumentInterface[T any] interface {

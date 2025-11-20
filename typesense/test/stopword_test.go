@@ -7,9 +7,9 @@ import (
 	"context"
 	"testing"
 
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api"
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api/pointer"
 	"github.com/stretchr/testify/require"
-	"github.com/typesense/typesense-go/v4/typesense/api"
-	"github.com/typesense/typesense-go/v4/typesense/api/pointer"
 )
 
 func TestStopwordRetrieve(t *testing.T) {

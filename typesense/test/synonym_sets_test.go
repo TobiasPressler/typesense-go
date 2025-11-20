@@ -7,8 +7,8 @@ import (
 	"context"
 	"testing"
 
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api"
 	"github.com/stretchr/testify/require"
-	"github.com/typesense/typesense-go/v4/typesense/api"
 )
 
 func synonymSetsCleanUp() {
@@ -76,4 +76,4 @@ func TestSynonymSets(t *testing.T) {
 		require.Equal(t, "dummy", foundSynonymSet.Items[0].Id)
 		require.Equal(t, []string{"foo", "bar", "baz"}, foundSynonymSet.Items[0].Synonyms)
 	})
-} 
+}

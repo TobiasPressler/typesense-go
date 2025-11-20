@@ -7,8 +7,8 @@ import (
 	"context"
 	"testing"
 
+	"github.com/TobiasPressler/typesense-go/v4/typesense/api"
 	"github.com/stretchr/testify/require"
-	"github.com/typesense/typesense-go/v4/typesense/api"
 )
 
 func synonymSetCleanUp() {
@@ -99,4 +99,4 @@ func TestSynonymSet(t *testing.T) {
 		_, err = typesenseClient.SynonymSet(synonymSetName).Retrieve(context.Background())
 		require.Error(t, err)
 	})
-} 
+}
